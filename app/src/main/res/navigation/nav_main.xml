@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/splashScreenFragment">
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.bestandroidcode.view.fragment.SplashScreenFragment"
+        android:label="SplashScreenFragment"
+        tools:layout="@layout/fragment_splash_screen">
+        <action
+            android:id="@+id/action_splashScreen_to_search"
+            app:destination="@id/searchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.bestandroidcode.view.fragment.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_search_to_advanceSearch"
+            app:destination="@id/advanceSearchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/advanceSearchFragment"
+        android:name="com.example.bestandroidcode.view.fragment.AdvanceSearchFragment"
+        android:label="AdvanceFragment"
+        tools:layout="@layout/fragment_advance_search"/>
+    <fragment
+        android:id="@+id/myFavoriteFragment"
+        android:name="com.example.bestandroidcode.view.fragment.MyFavoriteFragment"
+        android:label="MyFavoriteFragment"
+        tools:layout="@layout/fragment_my_favorite"/>
+</navigation>

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">The Cat</string>
+
+    <!-- Exit Application Dialog -->
+    <string name="exit_app_title">@string/app_name</string>
+    <string name="exit_app_message">Exit?</string>
+    <string name="exit_app_exit">Exit</string>
+    <string name="exit_app_cancel">Cancel</string>
+    <!-- Exit Application Dialog -->
+
+    <!-- The Cat Backdrop menu labels -->
+    <string name="the_cat_search_label">Search</string>
+    <string name="the_cat_my_favorite_label">My Favorite</string>
+
+    <!-- Cat Photo Card View -->
+    <string name="add_to_favorite">Add to favorite</string>
+    <string name="remove_from_favorite">Remove from favorite</string>
+    <!-- Cat Photo Card View -->
+
+    <!-- Splash Screen -->
+    <string name="retry">Retry</string>
+    <string name="unable_load_message">Unable to load.</string>
+    <!-- Splash Screen -->
+
+    <!-- Search -->
+    <string name="give_me_cate">Give Me Cat!</string>
+    <string name="i_am_a_pro">I am a pro</string>
+    <!-- Search -->
+
+    <!-- Advance Search -->
+    <string name="cat_category">Cat Category:</string>
+    <string name="category">Category</string>
+    <string name="tap_me">Tap Me!</string>
+    <!-- Advance Search -->
+
+    <!-- Snack Bar -->
+    <string name="in_progress">In progress...</string>
+    <!-- Snack Bar -->
+</resources>

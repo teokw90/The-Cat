@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorAccent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_margin_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_margin_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/app_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/right_margin_guideline"
+            app:layout_constraintStart_toEndOf="@id/left_margin_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/TextAppearance.TheCat.Title"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/the_cat_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/ic_cat"
+            app:layout_constraintBottom_toTopOf="@id/app_title"
+            app:layout_constraintEnd_toStartOf="@id/right_margin_guideline"
+            app:layout_constraintStart_toEndOf="@id/left_margin_guideline"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="H, 4:4"
+            app:layout_constraintVertical_bias="0.8"
+            app:layout_constraintWidth_percent="0.5"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:indeterminateTint="?attr/colorPrimary"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/right_margin_guideline"
+            app:layout_constraintStart_toEndOf="@id/left_margin_guideline"
+            app:layout_constraintTop_toBottomOf="@id/the_cat_icon"
+            app:layout_constraintVertical_bias="0.8"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/unable_load_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unable_load_message"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintTop_toBottomOf="@id/app_title"
+            app:layout_constraintEnd_toStartOf="@id/right_margin_guideline"
+            app:layout_constraintStart_toEndOf="@id/left_margin_guideline"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.3"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/retry_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorSecondaryDark"
+            android:text="@string/retry"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/unable_load_message"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/unable_load_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="unable_load_message, retry_button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

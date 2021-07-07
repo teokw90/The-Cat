@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.fragment.SearchFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_margin_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_margin_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_margin_guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95"/>
+
+        <include
+            android:id="@+id/cat_photo_card_view"
+            layout="@layout/card_view_cat_photo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="H, 3:3"
+            app:layout_constraintBottom_toTopOf="@id/search_randomly_button"
+            app:layout_constraintStart_toEndOf="@id/left_margin_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_margin_guideline"
+            app:layout_constraintTop_toBottomOf="@id/top_margin_guideline"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/search_randomly_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/give_me_cate"
+            app:layout_constraintBottom_toTopOf="@+id/advance_search_button"
+            app:layout_constraintStart_toEndOf="@id/left_margin_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_margin_guideline"
+            style="@style/Widget.TheCat.Button"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/advance_search_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@string/i_am_a_pro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/left_margin_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_margin_guideline"
+            style="@style/Widget.TheCat.Button"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

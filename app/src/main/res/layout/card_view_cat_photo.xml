@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.bestandroidcode.viewModel.TheCatViewModel" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:visibility="invisible"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardViewVisibility="@{viewModel.catPhotoURL}">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cat_photo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/add_or_remove_favorite_button"
+                android:maxHeight="400dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@id/add_or_remove_favorite_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:catPhoto="@{viewModel.catPhotoURL}"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_or_remove_favorite_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:onClick="@{(view) -> viewModel.saveOrRemoveFromMyFavorite()}"
+                app:favorite="@{viewModel.isFavoriteCatPhoto()}"
+                style="@style/Widget.TheCat.Button"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
